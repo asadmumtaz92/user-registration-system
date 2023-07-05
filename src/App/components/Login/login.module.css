@@ -34,7 +34,7 @@ label {
     padding-left: 8px;
 }
 .ipBGError {
-    background-color: rgba(255, 0, 0, 0.7);
+    border: 0.9px solid rgba(255, 0, 0, 0.7);
 }
 .ip:focus-visible {
     outline: none;

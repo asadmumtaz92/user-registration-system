@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, Fragment } from 'react'
 import styles from './login.module.css'
 import Card from '../Card'
+import ErrorModal from '../../customModals/ErrorModal'
 
 const Login = (props) => {
     // const emailRef = useRef()
@@ -9,6 +10,7 @@ const Login = (props) => {
     const [emailValid, setEmailValid] = useState(false)
     const [password, setPassword] = useState('')
     const [passwordValid, setPasswordValid] = useState(false)
+    const [showModal, setShowModal] = useState(false)
 
     const emailHandler = (event) => {
         if (event?.target?.value.includes('@') && event?.target?.value.trim().length > 6) {
@@ -25,6 +27,9 @@ const Login = (props) => {
         }
         else { setPasswordValid(true) }
         setPassword(event?.target?.value)
+    }
+    const buttonHandler = () => {
+        setShowModal(false)
     }
 
     const loginHandler = () => {
@@ -52,41 +57,49 @@ const Login = (props) => {
         setTimeout(() => {
             if (disabled) {
                 console.log(`Email: ${email} PW: ${password}`)
-                // alert(`Email: ${email}\nPW: ${password}`)
                 props?.checkLoginHandler()
             }
             else {
+                setShowModal(true)
                 console.log('something went wrong...')
-                alert('something went wrong...')
             }
         }, 500);
     }
 
     return (
-        <Card className={styles.login}>
-            <h2>Welcome Back</h2>
-            <div className={styles.ipBox}>
-                <label>Email:</label>
-                <input
-                    type='email' className={[`${styles.ip} ${emailValid && styles.ipBGError}`]}
-                    onChange={emailHandler}
-                    // ref={emailRef}
-                />
-            </div>
+        <Fragment>
+            {/* ERROR MODAL */}
+            {showModal && <ErrorModal
+                title='An error occured!!'
+                message='Something went wrong...'
+                buttonHandler={buttonHandler}
+            />}
+        
+            <Card className={styles.login}>
+                <h2>Welcome Back</h2>
+                <div className={styles.ipBox}>
+                    <label>Email:</label>
+                    <input
+                        type='email' className={[`${styles.ip} ${emailValid && styles.ipBGError}`]}
+                        onChange={emailHandler}
+                        // ref={emailRef}
+                    />
+                </div>
 
-            <div className={styles.ipBox}>
-                <label>Password:</label>
-                <input
-                    type='password' className={[`${styles.ip} ${passwordValid && styles.ipBGError}`]}
-                    onChange={passwordHandler}
-                    // ref={passwordRef}
-                />
-            </div>
+                <div className={styles.ipBox}>
+                    <label>Password:</label>
+                    <input
+                        type='password' className={[`${styles.ip} ${passwordValid && styles.ipBGError}`]}
+                        onChange={passwordHandler}
+                        // ref={passwordRef}
+                    />
+                </div>
 
-            <div className={styles.ipBox}>
-                <button className={styles.button} onClick={loginHandler}>login</button>
-            </div>
-        </Card>
+                <div className={styles.ipBox}>
+                    <button className={styles.button} onClick={loginHandler}>login</button>
+                </div>
+            </Card>
+        </Fragment>
     )
 }
 

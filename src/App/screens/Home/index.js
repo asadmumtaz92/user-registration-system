@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './index.module.css';
 import Header from './../../components/Header/header';
 
-const App = (props) => {
+const Home = (props) => {
     return (
         <React.Fragment>
             <Header status='home' logout={props?.logoutHandler} />
@@ -11,4 +11,4 @@ const App = (props) => {
     );
 }
 
-export default App;
+export default Home;
