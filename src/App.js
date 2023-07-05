@@ -1,16 +1,34 @@
-import React from 'react';
+import React,{ useState, useEffect } from 'react';
 import styles from './App.module.css';
-import Header from './App/components/Header/header';
-import Login from './App/components/Login/login';
+import Login from './App/screens/Login/index';
+import Home from './App/screens/Home/index'
 
-function App() {
+const App = () => {
+
+    const [isLogin, setIsLogin] = useState(false)
+
+    useEffect(() => {
+        setIsLogin(localStorage.getItem('isLogin'))
+    }, [isLogin])
+    
+    const checkLoginHandler = () => {
+        localStorage.setItem('isLogin', 'true')
+        setIsLogin(true)
+    }
+
+    const logoutHandler = () => {
+        localStorage.setItem('isLogin', 'false')
+        setIsLogin(false)
+    }
+    
+
     return (
-        <React.Fragment>
-            <Header />
-            <div className={styles.App}>
-                <Login />
-            </div>
-        </React.Fragment>
+        <div className={styles.App}>
+            {isLogin == 'true'
+                ? <Home logoutHandler={logoutHandler} />
+                : <Login checkLoginHandler={checkLoginHandler} />
+            }
+        </div>
     );
 }
 

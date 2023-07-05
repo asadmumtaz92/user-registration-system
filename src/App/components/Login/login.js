@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import styles from './login.module.css'
 import Card from '../Card'
 
-const Login = () => {
+const Login = (props) => {
     // const emailRef = useRef()
     // const passwordRef = useRef()
     const [email,setEmail] = useState('')
@@ -52,7 +52,8 @@ const Login = () => {
         setTimeout(() => {
             if (disabled) {
                 console.log(`Email: ${email} PW: ${password}`)
-                alert(`Email: ${email}\nPW: ${password}`)
+                // alert(`Email: ${email}\nPW: ${password}`)
+                props?.checkLoginHandler()
             }
             else {
                 console.log('something went wrong...')

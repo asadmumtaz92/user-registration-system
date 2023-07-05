@@ -8,12 +8,14 @@ const Header = (props) => {
                 <h2>Employee Portal</h2>
             </div>
 
-            <div className={styles.rightBox}>
-                <div className={styles.tab}><p>Menu-1</p></div>
-                <div className={styles.tab}><p>Menu-2</p></div>
-                <div className={styles.tab}><p>Menu-3</p></div>
-                <div className={styles.tab}><p>Menu-4</p></div>
-            </div>
+            {props?.status == 'home'
+                && <div className={styles.rightBox}>
+                    <div className={styles.tab}><p>Menu-1</p></div>
+                    <div className={styles.tab}><p>Menu-2</p></div>
+                    <div className={styles.tab}><p>Menu-3</p></div>
+                    <div className={styles.tab} onClick={props?.logout}><p>Logout</p></div>
+                </div>
+            }
         </div>
     )
 }
