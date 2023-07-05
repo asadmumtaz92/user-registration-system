@@ -1,0 +1,54 @@
+.header {
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.26);
+    align-items: center;
+    flex-direction: row;
+    min-height: 45px;
+    color: #d0d5db;
+    position: fixed;
+    display: flex;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+.leftBox {
+    background-color: #122d46;
+    align-items: center;
+    min-height: 45px;
+    display: flex;
+    flex: 1;
+}
+.leftBox h2 {
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1.4px;
+    margin-left: 15px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.rightBox {
+    flex-direction: row;
+    display: flex;
+}
+.tab {
+    border-left: 0.9px solid #122d46;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 25px;
+    min-height: 45px;
+    color: #000000;
+    display: flex;
+    flex: 1;
+}
+.tab:hover {
+    background-color: #19324a66;
+    color: #FFFFFF;
+}
+.tab p {
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+}
+

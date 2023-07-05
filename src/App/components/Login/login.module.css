@@ -1,0 +1,59 @@
+.login {
+    font-family: 'Courier New', Courier, monospace;
+    width: 40%;
+    margin: 0 auto;
+    padding: 2% 3%;
+}
+.login h2 {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-size: calc(5px + 2vmin);
+}
+
+.ipBox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+label {
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    margin-bottom: 3px;
+    padding-left: 3px;
+    font-size: calc(2px + 2vmin);
+}
+.ip {
+    font-family: 'Courier New', Courier, monospace;
+    /* height: 30px; */
+    font-weight: 500;
+    font-size: large;
+    border-radius: 5px;
+    border: 0.8px solid gray;
+    padding: 8px 0;
+    padding-left: 8px;
+}
+.ipBGError {
+    background-color: rgba(255, 0, 0, 0.7);
+}
+.ip:focus-visible {
+    outline: none;
+}
+.button {
+    border: none;
+    background-color: #122d46;
+    font-weight: 700;
+    /* font-size: large; */
+    font-size: calc(2px + 2vmin);
+    border-radius: 5px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: #d0d5db;
+    margin-top: 10px;
+}
+.button:hover {
+    color: #FFFFFF;
+}
