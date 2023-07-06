@@ -32,3 +32,22 @@
     color: #FFFFFF;
     color: #122d46;
 }
+@media (min-width: 300px) and (max-width: 786px) {
+    .login {
+        padding: 5%;
+        width: 80%;
+    }
+}
+
+@media (min-width: 787px) and (max-width: 1000px) {
+    .login {
+        padding: 3%;
+        width: 65%;
+    }
+}
+@media (min-width: 1001px) and (max-width: 1300px) {
+    .login {
+        padding: 3%;
+        width: 55%;
+    }
+}
