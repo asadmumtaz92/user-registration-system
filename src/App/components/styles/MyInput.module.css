@@ -1,0 +1,32 @@
+.ipBox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    margin-bottom: 3px;
+    padding-left: 3px;
+    font-size: calc(2px + 2vmin);
+}
+
+.ip {
+    font-family: 'Courier New', Courier, monospace;
+    /* height: 30px; */
+    font-weight: 500;
+    font-size: large;
+    border-radius: 5px;
+    border: 0.8px solid gray;
+    padding: 8px 0;
+    padding-left: 8px;
+}
+
+.ipBGError {
+    border: 0.9px solid rgba(255, 0, 0, 0.7);
+}
+
+.ip:focus-visible {
+    outline: none;
+}
